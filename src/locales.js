@@ -62,6 +62,25 @@ export const locales = {
     'saveAndContinueAcceptAll': 'Accept all and close',
     'servicesText': 'Services included',
   },
+  ru: {
+    'acceptText': 'Прянять куки',
+    'acceptSelectedShortText': 'Принять выбранные',
+    'acceptSelectedText': 'Принять выбранные',
+    'acceptShortText': 'Принять',
+    'bannerDescription': `
+      Мы обрабатываем файлы cookie. Продолжая работу на нашем сайте, вы подтверждаете свое согласие на использование cookies вашего браузера.
+    `,
+    'bannerShortDescription': 'Этот сайт использует файлы куки.',
+    'bannerLinkLabel': 'политика приватности',
+    'bannerLinkDescription': 'Узнать подробнее',
+    'panelTitle': 'Настройки куки',
+    'preferencesText': 'Узнать подробнее и настроить',
+    'rejectShortText': 'Отклонить',
+    'rejectText': 'Отклонить куки',
+    'saveAndContinue': 'Сохранить и продолжить',
+    'saveAndContinueAcceptAll': 'Принять все и закрыть',
+    'servicesText': 'Services included',
+  },
   es: {
     'acceptText': 'Aceptar cookies',
     'acceptSelectedShortText': 'Aceptar la selección',
