@@ -71,8 +71,8 @@ export const locales = {
       Мы обрабатываем файлы cookie. Продолжая работу на нашем сайте, вы подтверждаете свое согласие на использование cookies вашего браузера.
     `,
     'bannerShortDescription': 'Этот сайт использует файлы куки.',
-    'bannerLinkLabel': 'ссылка',
-    'bannerLinkDescription': 'Узнать подробнее - ',
+    'bannerLinkLabel': 'Узнать подробнее',
+    'bannerLinkDescription': '',
     'panelTitle': 'Настройки куки',
     'preferencesText': 'Узнать подробнее и настроить',
     'rejectShortText': 'Отклонить',

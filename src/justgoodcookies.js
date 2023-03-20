@@ -8,13 +8,11 @@
     https://github.com/francescomugnai/just-good-cookies
 */
 
-
-import { googleTagManager, checkActivations }  from "./activate";
 import { autoMode, generatePreferenceStorage, checkCookiesAutoMode }  from "./autoMode";
 import { showBanner, closeBanner }  from "./banner";
 import { getCookie, getCookieId, getCookiePreferences, saveCookie, checkCookieExpiration, saveCookiesPreferences }  from "./cookies";
 import { locales }  from "./locales";
-import { activateToggledCookies, hideScripts, removeScript, removeDivsOfUserAcceptedIframes, checkGoogleAnalytics }  from "./scripts";
+import { activateToggledCookies, hideScripts, removeScript, removeDivsOfUserAcceptedIframes }  from "./scripts";
 import { loadBannerLayout }  from "./styles";
 import { removePlaceholders }  from "./placeholders";
 import { closePreferencePanel, closePreferencePanelAndSaveAll, setPreferences, loadPreferences, openPanel  }  from "./preferences";
@@ -78,10 +76,7 @@ class JustGoodCookies {
           removePlaceholders() // Remove placeholders
           removeDivsOfUserAcceptedIframes() // Remove hidden divs (if any) for accepted cookies
           checkCookieExpiration()  // Check if the cookie is expired
-          checkActivations() // Check if we need to activate some pre-built scripts
-          checkGoogleAnalytics() // Check Google Analytics
           activateToggledCookies() // We enable cookies and manage them through the settings panel
-          googleTagManager()  // Check if we need to turn on Google Tag Manager
           closeBanner() // Close the banner
           break;
       }
@@ -98,7 +93,6 @@ class JustGoodCookies {
   */
   yesCookies() {
     checkCookieExpiration('1') 
-    checkActivations() 
     setPreferences() 
     activateToggledCookies() 
     closePreferencePanelAndSaveAll()
@@ -106,7 +100,6 @@ class JustGoodCookies {
     if(checkPreferences['remove'] > 0){
       removeScript(true) // We need to remove them AND refresh the page
     } else {
-      googleTagManager() // Do not trigger Google Tag Manager twice
       removePlaceholders() 
     }
     if(this.onAccept && typeof(this.onAccept) == 'function') this.onAccept()
@@ -199,7 +192,7 @@ class JustGoodCookies {
     // Banner config & style 
     this.bannerConfig = {
       animation: isBoolean(data.banner?.animation, "animation") ? data.banner.animation : true,
-      backgroundColor: data.banner?.backgroundColor ? isString(data.banner.backgroundColor, "backgroundColor") : checkTailwindPrefix('bg-white dark:bg-gray-800'),
+      backgroundColor: data.banner?.backgroundColor ? isString(data.banner.backgroundColor, "backgroundColor") : checkTailwindPrefix('bg-white'),
       backgroundDark: data.banner?.backgroundDark ?isBoolean( data.banner.backgroundDark, "backgroundDark") : false,
       backgroundImage: data.banner?.backgroundImage ? isString(data.banner.backgroundImage, "backgroundImage") : null,
       closeButton: data.banner?.closeButton ? isBoolean(data.banner.closeButton, "closeButton") : true,

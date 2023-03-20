@@ -14,7 +14,6 @@ export function animateToggle(val, buttonType){
   let toggleNecessary = document.getElementById('toggle-necessary-right-fixed')
   const bgColor = JGC.customStyle?.toggles ? JGC.customStyle.toggles : checkTailwindPrefix('bg-green-200')
   if(val && (toggle != null && toggleRight != null)){
-    toggle.classList.remove(checkTailwindPrefix('bg-gray-800'), checkTailwindPrefix('dark:bg-gray-700'))
     toggle.classList.add(bgColor)
     toggleRight.classList.remove(checkTailwindPrefix('translate-x-0'))
     toggleRight.classList.remove(checkTailwindPrefix('ml-0.5'))
@@ -27,7 +26,6 @@ export function animateToggle(val, buttonType){
   } else if(!val) {
     toggle.classList.remove(checkTailwindPrefix('translate-x-full'))
     toggle.classList.remove(bgColor)
-    toggle.classList.add(checkTailwindPrefix('bg-gray-800'), checkTailwindPrefix('dark:bg-gray-700'))
     toggleRight.classList.remove(checkTailwindPrefix('-ml-0.5'))
     toggleRight.classList.remove(checkTailwindPrefix('translate-x-full'))
     toggleRight.classList.remove(checkTailwindPrefix('border-green-400'))
@@ -35,7 +33,6 @@ export function animateToggle(val, buttonType){
     toggleRight.classList.add(checkTailwindPrefix('translate-x-0'))
     toggleRight.classList.add(checkTailwindPrefix('left-0'))
   } else if(val && buttonType == 'necessary' && toggleNecessary){
-    toggle.classList.remove(checkTailwindPrefix('bg-gray-800'), checkTailwindPrefix('dark:bg-gray-700'))
     toggle.classList.add(bgColor)
     toggleNecessary.classList.remove(checkTailwindPrefix('ml-0.5'))
     toggleNecessary.classList.add(checkTailwindPrefix('-ml-0.5'))
@@ -115,7 +112,7 @@ export function generateOptions(){
         <div class="${checkTailwindPrefix('flex items-center space-x-6 py-1 px-4')} ${ JGC.customStyle?.stripes ? `${ JGC.customStyle.stripes }` : '' } "> 
           <div>
             <div class="${checkTailwindPrefix('flex items-center justify-center')}">
-            <div id="toggle-${ k }-div" class="${checkTailwindPrefix('relative w-12 h-7 transition duration-200 ease-linear rounded-full bg-gray-800 dark:bg-gray-700')}">
+            <div id="toggle-${ k }-div" class="${checkTailwindPrefix('relative w-12 h-7 transition duration-200 ease-linear rounded-full')}">
               <label id="${ k == 'necessary' ? `toggle-necessary-right-fixed`: `toggle-${ k }-right` }"
                 for="toggle-${ k }" class="${checkTailwindPrefix('bg-gray-100 absolute left-0 w-6 h-6 mt-0.5 ml-0.5 transition duration-100 ease-linear transform rounded-full cursor-pointer mr-[2px]')}">
                 ${ k == 'necessary' ? `
@@ -191,7 +188,7 @@ export function managePreferences(){
     cookiePanel.innerHTML = `
     <div id="preferenceDiv" style="background-color: rgba(0,0,0,0.6);z-index:9999 !important;" class="${checkTailwindPrefix('w-full min-h-screen top-0 fixed flex flex-col p-6 shadow-2xl items-center justify-center mx-auto transition duration-700 ease-in-out')} ${ JGC.panelHeader ? '' : null } ">
         ${ JGC.panelHeader ? `<div id="jgc-custom-header" class="${checkTailwindPrefix('w-full')}"></div>` : '' }
-          <div class="${ JGC.panel?.bgColor ? JGC.panel.bgColor : `${JGC.customStyle?.preferenceDiv ? JGC.customStyle.preferenceDiv : checkTailwindPrefix('bg-white dark:bg-gray-800 max-w-3xl w-full')}`} ${ JGC.panel?.padding == false ? '' : `${checkTailwindPrefix('p-2')}` }">
+          <div class="${ JGC.panel?.bgColor ? JGC.panel.bgColor : `${JGC.customStyle?.preferenceDiv ? JGC.customStyle.preferenceDiv : checkTailwindPrefix('bg-white max-w-3xl w-full')}`} ${ JGC.panel?.padding == false ? '' : `${checkTailwindPrefix('p-2')}` }">
             <div class="${ JGC.customStyle?.panelHeader ? JGC.customStyle.panelHeader : `${checkTailwindPrefix('md:flex justify-between px-4 py-4')}` }">
               <h2 class="${ JGC.customStyle?.panelTitle ? JGC.customStyle.panelTitle : checkTailwindPrefix('dark:text-gray-300 leading-snug text-xl font-bold m-0 p-0')}">
                 ${ JGC.text?.panelTitle ? JGC.text.panelTitle : '' } 

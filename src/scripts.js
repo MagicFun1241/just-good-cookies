@@ -35,38 +35,6 @@ export function activateToggledCookies(){
 }
 
 /**
-* Delete Google Analytics cookies if the user has changed their settings in this regard
-* TODO: It needs to be improved.
-*/
-export function checkGoogleAnalytics(){
-  let checkPreferencesFromStorage = JSON.parse(localStorage.getItem("JgcPreferences"));
-  for (let [k, v] of Object.entries(checkPreferencesFromStorage)) {
-    if(k != 'necessary'){
-      const getGoogleAnalytics = document.getElementById('googleAnalytics')
-      if(getGoogleAnalytics){
-        const urlParams = new URL(getGoogleAnalytics.getAttribute('data-jgc-src')).escape();
-        const googleAnalyticsId = urlParams.searchParams.get("id");
-        const domain = window.location.hostname
-        let getAttribute = getGoogleAnalytics.getAttribute('data-jgc-tag')
-        // TODO: This part can be improved
-        if(k == getAttribute && v == false){
-          document.cookie = `_ga=; path=/; domain=${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_ga=; path=/; domain=.${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_ga_${googleAnalyticsId.slice(2)}=; path=/; domain=${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_ga_${googleAnalyticsId.slice(2)}=; path=/; domain=.${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_gid=; path=/; domain=${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_gid=; path=/; domain=.${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_gat_gtag_${googleAnalyticsId}=; path=/; domain=${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_gat_gtag_${googleAnalyticsId}=; path=/; domain=.${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_gat_gtag_UA_${googleAnalyticsId.slice(3, -2)}_1=; path=/; domain=${domain}; expires=` + new Date(0).toUTCString();
-          document.cookie = `_gat_gtag_UA_${googleAnalyticsId.slice(3, -2)}_1=; path=/; domain=.${domain}; expires=` + new Date(0).toUTCString();
-        }
-      }
-    } 
-  }
-}
-
-/**
 * Hide the scripts
 */
 export function hideScripts(){

@@ -202,7 +202,7 @@ import { managePreferencesLink, managePreferencesLinkListener  }  from "./prefer
                 </div>  
                 <div class="${checkTailwindPrefix('grid grid-cols-2 bg-black w-full divide-x divide-gray-300 dark:divide-gray-700')}">
                 <div class="${checkTailwindPrefix('group')}">
-                    <div class="${JGC.customStyle?.accept ? JGC.customStyle.accept : checkTailwindPrefix('bg-gray-300 dark:bg-gray-800')} 
+                    <div class="${JGC.customStyle?.accept ? JGC.customStyle.accept : checkTailwindPrefix('bg-gray-300')} 
                       ${checkTailwindPrefix('py-4 flex items-center justify-center transition duration-500 group-hover:scale-110 relative hover:z-10')}" style="box-shadow: 0px 14px 20px 20px rgba(0, 0, 0, 10%);">
                       <button type="button" role="button" tabindex="0" id="yesCookies" class="${ yesCookies4 } group-hover:text-green-800 transition duration-500">
                         ${ JGC.bannerConfig.shortText ? JGC.bannerConfig.shortText : JGC.text.acceptText  }    
@@ -210,7 +210,7 @@ import { managePreferencesLink, managePreferencesLinkListener  }  from "./prefer
                     </div>
                   </div>
                   <div class="${checkTailwindPrefix('group')}">
-                    <div class="${JGC.customStyle?.reject ? JGC.customStyle.reject : checkTailwindPrefix('bg-gray-300 dark:bg-gray-800')}
+                    <div class="${JGC.customStyle?.reject ? JGC.customStyle.reject : checkTailwindPrefix('bg-gray-300')}
                       ${checkTailwindPrefix('py-4 flex items-center justify-center  transition duration-500 hover:scale-110 relative hover:z-10')}" style="box-shadow: 0px 14px 20px 5px rgb(0, 0, 0, 10%);">
                       <button role="button" tabindex="0" type="button" id="noCookies" class="${ noCookies4 } group-hover:text-red-800 transition duration-500">
                         ${ JGC.bannerConfig.shortText ? JGC.locale.rejectShortText : JGC.text.rejectText  }    
@@ -243,7 +243,7 @@ import { managePreferencesLink, managePreferencesLinkListener  }  from "./prefer
         ${ JGC.bannerConfig.backgroundColor }
         ${ JGC.bannerConfig.innerBackgroundImage ? `${checkTailwindPrefix("grid grid-cols-5")}  ${ JGC.bannerConfig.backgroundImage ? '' : checkTailwindPrefix('gap-6')}` : checkTailwindPrefix('flex flex-col') }
         ${ JGC.bannerConfig.backgroundImage ? checkTailwindPrefix('p-2') : checkTailwindPrefix('px-6 items-start justify-center py-8') } 
-        ${checkTailwindPrefix('sm:w-full md:w-full w-full fixed shadow-2xl  transition duration-700 ease-in-out dark:bg-gray-800 z-[999]')}">
+        ${checkTailwindPrefix('sm:w-full md:w-full w-full fixed shadow-2xl  transition duration-700 ease-in-out z-[999]')}">
         ${ JGC.bannerConfig.closeButton ? `<button id="jgc-close-button" class="${JGC.customStyle?.closeButton ? JGC.customStyle.closeButton : checkTailwindPrefix('text-black dark:text-white')} 
         ${JGC.customStyle?.closeButton ? JGC.customStyle.closeButton : ''} ${checkTailwindPrefix('rounded-full text-2xl self-end m-0 p-0 bg-transparent')}">&times;</button>` : ''}
         ${ JGC.bannerConfig.innerBackgroundImage ? `<img class="${ checkTailwindPrefix('md:rounded-t col-span-1')}" src="${ JGC.bannerConfig.innerBackgroundImage }" />` : ''  }
@@ -356,7 +356,7 @@ import { managePreferencesLink, managePreferencesLinkListener  }  from "./prefer
             ${ getMaxWidth('max-w-xl') }
             ${ checkTailwindPrefix('translate-y-full origin-bottom fixed bg-opacity-95 right-0 shadow-2xl md:flex md:flex-col md:space-x-1  transition duration-700 ease-in-out z-[999] rounded')}">
             ${ JGC.bannerConfig.closeButton ? `<button id="jgc-close-button" class="${JGC.customStyle?.closeButton}  
-            ${ checkTailwindPrefix('text-sm bg-gray-800 px-3 py-0.5 rounded-tr-lg rounded-tl-lg  border-t-rounded text-white self-end absolute -top-[8px] right-2 transform -translate-y-4 m-0')}">
+            ${ checkTailwindPrefix('text-sm px-3 py-0.5 rounded-tr-lg rounded-tl-lg  border-t-rounded text-white self-end absolute -top-[8px] right-2 transform -translate-y-4 m-0')}">
             &times;</button>` : '' }
             <div class="${checkTailwindPrefix('space-y-6 flex flex-col')}
               ${ JGC.bannerConfig.backgroundImage && !JGC.bannerConfig.innerBackgroundImage ? `${ JGC.bannerConfig.backgroundColor ?? ''} ${checkTailwindPrefix('p-4')}`: ''}
@@ -409,7 +409,7 @@ import { managePreferencesLink, managePreferencesLinkListener  }  from "./prefer
         ${ JGC.bannerConfig.backgroundColor }
         ${ JGC.bannerConfig.innerBackgroundImage ? `${checkTailwindPrefix("grid grid-cols-5")}  ${ JGC.bannerConfig.backgroundImage ? '' : checkTailwindPrefix('gap-6')}` : checkTailwindPrefix('flex flex-col') }
         ${ JGC.bannerConfig.backgroundImage ? checkTailwindPrefix('p-2') : checkTailwindPrefix('px-6 items-start justify-center') } 
-        ${ checkTailwindPrefix('sm:w-full md:w-full w-full fixed shadow-2xl transition duration-700 ease-in-out dark:bg-gray-800 z-[999] py-4')}">
+        ${ checkTailwindPrefix('sm:w-full md:w-full w-full fixed shadow-2xl transition duration-700 ease-in-out z-[999] py-4')}">
         ${ JGC.bannerConfig.innerBackgroundImage ? `<img class="${ checkTailwindPrefix('md:rounded-t col-span-1')}" src="${ JGC.bannerConfig.innerBackgroundImage }" />` : ''  }
             <div class="
             ${ JGC.bannerConfig.backgroundImage ? `${JGC.bannerConfig.backgroundColor} ${checkTailwindPrefix('w-full p-4')}` : '' } 
