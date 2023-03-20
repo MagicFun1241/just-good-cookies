@@ -1,8 +1,7 @@
 import JGC from './justgoodcookies';
-import { addEnterAction, getMaxWidth, checkTailwindPrefix, returnLogo, returnIcon }  from "./utilities";
-import { getCookie }  from "./cookies";
+import { getMaxWidth, checkTailwindPrefix, returnLogo, returnIcon }  from "./utilities";
 import { closeBannerWithButton, makeBannerAnimation, generateButtons }  from "./banner";
-import { managePreferencesLink, managePreferencesLinkListener  }  from "./preferences";
+import { managePreferencesLink }  from "./preferences";
 
 /**
 * Load banner layouts
@@ -28,7 +27,7 @@ import { managePreferencesLink, managePreferencesLinkListener  }  from "./prefer
             ${ JGC.bannerConfig.backgroundColor } 
             ${ JGC.bannerConfig.backgroundImage ? `${ JGC.bannerConfig.backgroundColor } ${checkTailwindPrefix('p-2')}` : `${ JGC.bannerConfig.innerBackgroundImage ? '' : checkTailwindPrefix('p-6') }` }
             ${ getMaxWidth('max-w-sm') }
-            ${checkTailwindPrefix('fixed shadow-[#979797] shadow-xl md:flex md:flex-col md:space-x-1 right-0 md:mr-[2%] transition duration-700 ease-in-out z-[99999] rounded')}">
+            ${checkTailwindPrefix('fixed shadow-[0px_0px_3px_rgba(3,102,214,0.3)] shadow-xl md:flex md:flex-col md:space-x-1 right-0 md:mr-[2%] transition duration-700 ease-in-out z-[99999] rounded')}">
             <div class="${checkTailwindPrefix('space-y-2 flex flex-col')} ${ JGC.bannerConfig.backgroundImage && !JGC.bannerConfig.innerBackgroundImage ? `${ JGC.bannerConfig.backgroundColor ?? '' }  ${checkTailwindPrefix('p-4')}`: ''}
               ${ JGC.bannerConfig.innerBackgroundImage && !JGC.bannerConfig.backgroundImage ? checkTailwindPrefix('pb-8') : ''} 
               ${ JGC.bannerConfig.innerBackgroundImage && JGC.bannerConfig.backgroundImage ? `${checkTailwindPrefix('pb-8')} ${ JGC.bannerConfig.backgroundColor ??  '' }` : ''}
